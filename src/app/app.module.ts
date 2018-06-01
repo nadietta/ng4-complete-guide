@@ -14,27 +14,37 @@ import {BetterHighlightDirective} from './shared/better-highlight/better-highlig
 import {UnlessDirective} from './shared/unless/unless.directive';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {ShoppingListService} from './shopping-list/shopping-list.service';
+import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
+import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BasicHighlightDirective,
-    BetterHighlightDirective,
-    DropdownDirective,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    UnlessDirective
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [ShoppingListService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BasicHighlightDirective,
+        BetterHighlightDirective,
+        DropdownDirective,
+        HeaderComponent,
+        RecipesComponent,
+        RecipeListComponent,
+        RecipeDetailComponent,
+        RecipeItemComponent,
+        ShoppingListComponent,
+        ShoppingEditComponent,
+        UnlessDirective,
+        RecipeStartComponent,
+        RecipeEditComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+    providers: [ShoppingListService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
