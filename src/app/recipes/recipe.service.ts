@@ -31,6 +31,11 @@ export class RecipeService {
     constructor(private slService: ShoppingListService) {
     }
 
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipeChanged.next(this.recipes.slice());
+    }
+
     getRecipes() {
         // to return a new array and not the reference to the array itself.
         // We don't want the recipes to be edited from outside.
