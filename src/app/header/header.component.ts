@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Response} from '@angular/http';
 
 import {DataStorageService} from '../shared/data-storage.service';
+import {AuthService} from "../auth/auth.service";
 
 @Component({
     selector: 'app-header',
@@ -11,7 +12,8 @@ import {DataStorageService} from '../shared/data-storage.service';
 export class HeaderComponent {
     // @Output() featureSelected = new EventEmitter<string>();
 
-    constructor(private dsService: DataStorageService) {
+    constructor(private dsService: DataStorageService,
+                private authService: AuthService) {
     }
 
     // onSelect(feature: string) {
@@ -27,5 +29,9 @@ export class HeaderComponent {
 
     onRetrieveRecipes() {
         this.dsService.retrieveRecipes();
+    }
+
+    onLogout() {
+        this.authService.logout();
     }
 }
